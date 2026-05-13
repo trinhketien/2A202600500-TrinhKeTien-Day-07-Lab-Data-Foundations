@@ -62,6 +62,11 @@
 
 ### Test Results
 
+```
+pytest tests/ -v
+============================= 42 passed in 0.97s ==============================
+```
+
 **Số tests pass:** 42 / 42 ✅
 
 ---
@@ -83,17 +88,31 @@
 
 ## 4. Results (10 điểm)
 
-| # | Query | Top-1 Chunk | Score | Relevant? |
-|---|-------|------------|-------|-----------|
-| 1 | Python use cases in production | customer_support_playbook | 0.2174 | ❌ |
-| 2 | Vector search pipeline | customer_support_playbook | 0.0656 | ❌ |
-| 3 | Best chunking strategy | rag_system_design | 0.2984 | Partial |
-| 4 | Support content for retrieval | vector_store_notes | 0.3067 | Partial |
-| 5 | Role of metadata | vi_retrieval_notes | 0.1851 | ✅ |
+Chạy 5 benchmark queries (thống nhất cùng nhóm) trên implementation cá nhân.
+
+### Benchmark Queries & Gold Answers (nhóm thống nhất)
+
+| # | Query | Gold Answer |
+|---|-------|-------------|
+| 1 | What are the main use cases of Python in production? | Python is used for APIs, data pipelines, internal tools, and model-serving layers |
+| 2 | How does a vector search pipeline work? | Chunk documents, embed chunks, store vectors with metadata, embed query and rank by similarity |
+| 3 | What chunking strategy performed best in the experiment? | Recursive chunking offered the best balance in the experiment |
+| 4 | How should customer support content be written for retrieval? | Authors should specify exact page, button, or log source instead of vague statements |
+| 5 | What is the role of metadata in retrieval systems? | Metadata helps filter search space by department, language, date to improve precision |
+
+### Kết Quả Của Tôi
+
+| # | Query | Top-1 Retrieved Chunk | Score | Relevant? | Agent Answer (tóm tắt) |
+|---|-------|-----------------------|-------|-----------|------------------------|
+| 1 | Python use cases in production | customer_support_playbook | 0.2174 | ❌ | Context từ support playbook, không đúng target |
+| 2 | Vector search pipeline | customer_support_playbook | 0.0656 | ❌ | Context không chứa vector pipeline info |
+| 3 | Best chunking strategy | rag_system_design | 0.2984 | Partial | RAG design đề cập chunking, nhưng không phải experiment report |
+| 4 | Support content for retrieval | vector_store_notes | 0.3067 | Partial | Vector store notes liên quan, customer_support ở top-2 phù hợp hơn |
+| 5 | Role of metadata | vi_retrieval_notes | 0.1851 | ✅ | vi_retrieval_notes nói rõ về metadata filtering |
 
 **Queries có relevant chunk trong top-3:** 3 / 5
 
-> Kết quả dùng mock embedder. Với real embedder, precision sẽ cao hơn đáng kể.
+> Kết quả dùng mock embedder (hash-based, không hiểu ngữ nghĩa). Với real embedder, retrieval precision sẽ cao hơn đáng kể.
 
 ---
 

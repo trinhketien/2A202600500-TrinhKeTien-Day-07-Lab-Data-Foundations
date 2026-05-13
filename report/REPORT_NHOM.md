@@ -88,6 +88,13 @@ Chạy `ChunkingStrategyComparator().compare()` trên 3 tài liệu (chunk_size=
 **Strategy nào tốt nhất cho domain này? Tại sao?**
 > RecursiveChunker phù hợp nhất vì tài liệu có cấu trúc markdown rõ ràng. Nó tôn trọng ranh giới paragraph và heading, giữ ý trọn vẹn.
 
+### So Sánh: Strategy Đã Chọn vs Baseline
+
+| Tài liệu | Strategy | Chunk Count | Avg Length | Retrieval Quality? |
+|-----------|----------|-------------|------------|-------------------|
+| chunking_experiment_report | best baseline (SentenceChunker) | 5 | 395.6 | Tốt nhưng chunk dài |
+| chunking_experiment_report | **RecursiveChunker (của tôi)** | 18 | 108.44 | Chunk ngắn gọn, đúng section |
+
 ---
 
 ## 3. Benchmark Queries & Gold Answers (10 điểm)
