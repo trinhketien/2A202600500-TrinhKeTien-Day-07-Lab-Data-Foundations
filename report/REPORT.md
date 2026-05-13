@@ -268,18 +268,3 @@ tests/test_solution.py::TestEmbeddingStoreDeleteDocument::test_delete_returns_tr
 **Đề xuất cải thiện:**
 > (1) Chunk documents trước khi index để mỗi chunk chứa ý cụ thể, (2) Dùng real embedder để capture ngữ nghĩa, (3) Thêm metadata `topic` để filter theo chủ đề.
 
----
-
-## Tự Đánh Giá
-
-| Tiêu chí | Loại | Điểm tự đánh giá |
-|----------|------|-------------------|
-| Warm-up | Cá nhân | 5 / 5 |
-| Document selection | Nhóm | 8 / 10 |
-| Chunking strategy | Nhóm | 13 / 15 |
-| My approach | Cá nhân | 9 / 10 |
-| Similarity predictions | Cá nhân | 4 / 5 |
-| Results | Cá nhân | 7 / 10 |
-| Core implementation (tests) | Cá nhân | 30 / 30 |
-| Demo | Nhóm | 4 / 5 |
-| **Tổng** | | **80 / 100** |

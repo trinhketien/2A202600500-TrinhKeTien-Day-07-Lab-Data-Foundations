@@ -122,14 +122,3 @@ Chạy `ChunkingStrategyComparator().compare()` trên 3 tài liệu (chunk_size=
 **Nếu làm lại, thay đổi gì trong data strategy?**
 > (1) Real embedder thay mock, (2) metadata phong phú hơn (date, author, difficulty), (3) chunk trước khi index.
 
----
-
-## Tự Đánh Giá Phần Nhóm
-
-| Tiêu chí | Điểm |
-|----------|------|
-| Document selection | 8 / 10 |
-| Chunking strategy | 13 / 15 |
-| Retrieval quality | 7 / 10 |
-| Demo | 4 / 5 |
-| **Tổng nhóm** | **32 / 40** |

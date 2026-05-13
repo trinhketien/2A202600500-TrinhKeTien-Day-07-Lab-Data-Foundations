@@ -114,15 +114,3 @@
 
 **Đề xuất:** Chunk trước khi index, dùng real embedder, thêm metadata `topic`.
 
----
-
-## Tự Đánh Giá Cá Nhân
-
-| Tiêu chí | Điểm |
-|----------|------|
-| Warm-up | 5 / 5 |
-| My approach | 9 / 10 |
-| Similarity predictions | 4 / 5 |
-| Results | 7 / 10 |
-| Core implementation (42/42 tests) | 30 / 30 |
-| **Tổng cá nhân** | **55 / 60** |
